@@ -1,0 +1,180 @@
+// このファイルですべてのscssファイルを@importで読み込むことで、一つのsassファイルに統合します。
+
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+header {
+  height: 24px;
+  width: 100%;
+  .heading{
+    background-color: $water;
+    color: $white;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+  }
+}
+
+.contents {
+  height: calc(100% - 24px);
+  width: 100%;
+  @include clearfix() ;
+}
+
+.left-content {
+  background-color: #2f3e51;
+  height: 100%;
+  width: 300px;
+  color: $white;
+  display: inline-block;
+}
+
+.top {
+  background-color: #253141;
+  height: 96px;
+  font-size: 16px;
+  font-weight: bold;
+
+  &__nickname {
+    padding: 35px 20px;
+    letter-spacing: 3px;
+    display: inline-block;
+  }
+
+  &__icon {
+    display: inline-block;
+    float: right;
+    padding: 35px 20px;
+    font-size: 20px;
+  }
+}
+
+.bottom {
+  height: calc(100% - 96px);
+  &__group {
+    padding: 0px 20px;
+    word-break: break-all;
+    &--name {
+      font-size: 15px;
+      padding:20px 0 5px;
+    }
+    &--message {
+      font-size: 11px;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.right-content {
+  height: 100%;
+  width: calc(100% - 300px);
+  float: right;
+  position: relative;
+}
+
+.right-top {
+  height: 96px;
+  padding: 0 40px;
+  &__name {
+    font-size: 20px;
+    padding: 35px 0 15px;
+    color: #333333;
+    display: inline-block;
+  }
+  &__edit {
+    border: thin solid $water;
+    color: $water;
+    height: 40px;
+    width: 40px;
+    float:right;
+    padding: 0 20px;
+    margin: 28px 0;
+    text-align: center;
+    line-height: 40px;
+  }
+  &__member {
+    color: $gray;
+    font-size: 12px;
+
+  }
+}
+
+.right-center {
+  background-color: #eeeeee;
+  height: calc(100% - 142px);
+  padding: 46px 40px 0;
+  @include clearfix() ;
+  &__group {
+    word-break: break-all;
+    &--name {
+      float: left;
+      margin-right: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      color: $black;
+    }
+    &--date {
+      color: $gray;
+      font-size: 12px;
+      padding-bottom: 10px;
+    }
+    &--message {
+      color: $black;
+      font-size: 14px;
+      padding-bottom: 40px;
+    }
+  }
+}
+
+.right-bottom {
+  background-color: #AAAAAA;
+  height: 95px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  @include clearfix() ;
+  .right-bottom__text {
+    background-color: $white;
+    height: 50px;
+    width: calc(100% - 180px);
+    margin: 20px 0px 20px 40px;
+    line-height: 50px;
+    display: inline-block;
+    float: left;
+    @include clearfix() ;
+    .right-bottom__text--message {
+      display: inline-block;
+      color: $black;
+      padding-left: 10px;
+      font-size: 16px;
+    }
+    .right-bottom__text--icon {
+      display: inline-block;
+      padding-right: 10px;
+      font-size: 16px;
+      float: right;
+    }
+  }
+  .right-bottom__send {
+    color: $white;
+    background-color: $water;
+    float:left;
+    padding: 0 20px;
+    margin: 20px 40px 20px 15px;
+    text-align: center;
+    line-height: 50px;
+  }
+}
+
+
+
+
+
+
