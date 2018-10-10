@@ -1,0 +1,25 @@
+.right-top {
+  height: 96px;
+  padding: 0 40px;
+  &__name {
+    font-size: 20px;
+    padding: 35px 0 15px;
+    color: #333333;
+    display: inline-block;
+  }
+  &__edit {
+    border: thin solid $water;
+    color: $water;
+    height: 40px;
+    width: 40px;
+    float:right;
+    padding: 0 20px;
+    margin: 28px 0;
+    text-align: center;
+    line-height: 40px;
+  }
+  &__member {
+    color: $gray;
+    font-size: 12px;
+  }
+}
