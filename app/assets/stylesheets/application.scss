@@ -2,9 +2,12 @@
 @import "./reset";
 @import "./variable";
 @import "font-awesome";
-@import "./chats";
-@import "./edit";
+@import "./chats/chats";
+@import "./chats/edit";
+@import "./chats/group";
+@import "./chats/group-edit";
+@import "./chats/message";
+@import "./chats/send";
+@import "./top/user";
+@import "./flash";
 @import "./group";
-@import "./group-edit";
-@import "./message";
-@import "./send";

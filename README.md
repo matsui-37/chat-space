@@ -53,13 +53,11 @@ Things you may want to cover:
 - has_many :members
 
 
-## groupsテーブル
+## groupテーブル
 
 |Column|Type|Options|
 |------|---|-------|
-|name      |string|null: false|
-|add_member|string||
-|member    |string||
+|name      |string|null: false, index: true, unique: true|
 
 ### Asociation
 -has_many :messages
@@ -67,12 +65,12 @@ Things you may want to cover:
 -has_many :members
 
 
-## membersテーブル
+## group_userテーブル
 
 |Column|Type|Options|
 |------|---|-------|
-|user_id |integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|group |references|foreign_key: true|
+|user  |references|foreign_key: true|
 
 ### Association
 - belongs_to :user
