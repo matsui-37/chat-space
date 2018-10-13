@@ -8,12 +8,13 @@
       = render partial: "group"
     .right-content
       .right-top
-        .right-top__name
-          sampleグループ
-        .right-top__edit
-          Edit
-        .right-top__member
-          Member : mattuu
+        = link_to new_group_path do
+          .right-top__name
+            d
+          .right-top__edit
+            Edit
+          .right-top__member
+            Member : current_user.name
       = render partial: "chats"
       .right-bottom
         .right-bottom__text

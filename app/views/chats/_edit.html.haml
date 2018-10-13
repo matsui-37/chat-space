@@ -1,6 +1,10 @@
+
 .top
   .top__nickname
-    mattuu
+    =current_user.name
   .top__icon
-    = fa_icon'edit'
-    = fa_icon'gear'
+    = link_to new_group_path do
+      = fa_icon'edit', class: "icon"
+    = link_to edit_user_path(current_user) do
+      = fa_icon'gear', class: "icon"
+
