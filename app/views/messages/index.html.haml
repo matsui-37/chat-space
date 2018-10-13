@@ -1,0 +1,25 @@
+%body
+  %header
+    .heading
+      チャットグループが作成されました。
+  .contents
+    .left-content
+      = render partial: "edit"
+      = render partial: "group"
+    .right-content
+      .right-top
+        .right-top__name
+          d
+        .right-top__edit
+          Edit
+        .right-top__member
+          Member : current_user.name
+      = render partial: "messages"
+
+      .right-bottom
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: "right-bottom__text", placeholder: "type a message"
+          = f.label :image, class: "right-bottom__text--icon" do
+            = fa_icon 'image', class: "icon"
+            = f.file_field :image, class: "hidden"
+          = f.submit "Send", class: "right-bottom__send"

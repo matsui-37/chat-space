@@ -6,34 +6,39 @@
   bottom: 0;
   @include clearfix() ;
   .right-bottom__text {
+    color: $black;
     background-color: $white;
+    font-size: 16px;
     height: 50px;
     width: calc(100% - 180px);
     margin: 20px 0px 20px 40px;
     line-height: 50px;
     display: inline-block;
     float: left;
+    padding-left: 10px;
+    position: relative;
     @include clearfix() ;
-    .right-bottom__text--message {
-      display: inline-block;
-      color: $black;
-      padding-left: 10px;
-      font-size: 16px;
     }
     .right-bottom__text--icon {
       display: inline-block;
       padding-right: 10px;
       font-size: 16px;
       float: right;
+      position: absolute;
+      top: 33px;
+      right: 135px;
     }
-  }
   .right-bottom__send {
     color: $white;
     background-color: $water;
-    float:left;
+    float:right;
     padding: 0 20px;
-    margin: 20px 40px 20px 15px;
+    margin: 20px;
     text-align: center;
     line-height: 50px;
   }
+}
+
+.hidden {
+  display: none
 }
