@@ -4,10 +4,12 @@
     padding: 0px 20px;
     word-break: break-all;
     &--name {
+      color: $white;
       font-size: 15px;
       padding:20px 0 5px;
     }
     &--message {
+      color: $white;
       font-size: 11px;
       padding-bottom: 20px;
     }

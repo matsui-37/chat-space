@@ -1,3 +1,10 @@
-.wrapper
+%body
+  %header
+    .heading
+      チャットグループが作成されました。
+  .contents
+    .left-content
+      = render partial: "chats/edit"
+      = render partial: "chats/group"
 
-  = render 'shared/side_bar'
+

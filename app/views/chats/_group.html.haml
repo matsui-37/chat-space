@@ -1,16 +1,8 @@
 .bottom
-  .bottom__group
-    .bottom__group--name
-      神
-    .bottom__group--message
-      へえけえっげげ
-  .bottom__group
-    .bottom__group--name
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    .bottom__group--message
-      とーーーーー
-  .bottom__group
-    .bottom__group--name
-      sampleグループ
-    .bottom__group--message
-      ハイロー
+  - current_user.groups.each do |group|
+    .bottom__group
+      = link_to group_chats_path(group) do
+        .bottom__group--name
+          = group.name
+        .bottom__group--message
+          へえけえっげげ
