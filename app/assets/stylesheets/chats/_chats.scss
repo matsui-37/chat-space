@@ -10,20 +10,8 @@ body {
   margin: 0;
 }
 
-header {
-  height: 24px;
-  width: 100%;
-  .heading{
-    background-color: $water;
-    color: $white;
-    font-size: 14px;
-    line-height: 25px;
-    text-align: center;
-  }
-}
-
 .contents {
-  height: calc(100% - 24px);
+  height:100%;
   width: 100%;
   @include clearfix() ;
 }
@@ -34,6 +22,7 @@ header {
   width: 300px;
   color: $white;
   display: inline-block;
+
 }
 
 .right-content {
