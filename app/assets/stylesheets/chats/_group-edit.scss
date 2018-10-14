@@ -1,6 +1,11 @@
 .right-top {
+  background: white;
   height: 96px;
+  width: calc(100% - 380px);
   padding: 0 40px;
+  display: block;
+  position: fixed;
+
   &__name {
     font-size: 20px;
     padding: 35px 0 15px;
@@ -23,3 +28,5 @@
     font-size: 12px;
   }
 }
+
+

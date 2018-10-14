@@ -1,7 +1,10 @@
 .right-center {
   background-color: #eeeeee;
-  height: calc(100% - 142px);
+  height: calc(100% - 230px);
   padding: 46px 40px 0;
+  margin-top: 96px;
+  margin-bottom: 95px;
+  overflow: scroll;
   @include clearfix() ;
   &__group {
     word-break: break-all;
@@ -22,5 +25,13 @@
       font-size: 14px;
       padding-bottom: 40px;
     }
+    &--images {
+      height: 100px;
+      width: 100px;
+      display: block;
+    }
   }
 }
+
+
+

@@ -1,15 +1,11 @@
-.right-center
-  .right-center__group
-    .right-center__group--name
-      mattuu
-    .right-center__group--date
-      2018/10/08
-    .right-center__group--message
-      俺
-  .right-center__group
-    .right-center__group--name
-      mattuu
-    .right-center__group--date
-      2018/12/11
-    .right-center__group--message
-      小ホス
+.right-center__group
+  .right-center__group--name
+    = messages.user.name
+  .right-center__group--date
+    = format_posted_time(messages.created_at)
+  .right-center__group--message
+    - if messages.content.present?
+      = messages.content
+    = image_tag messages.image.url, class: "right-center__group--images" if messages.image.present?
+
+
