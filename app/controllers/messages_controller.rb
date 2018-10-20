@@ -9,13 +9,21 @@ class MessagesController < ApplicationController
   def create
     @message = @group.messages.new(message_params)
     if @message.save
-      redirect_to group_messages_path(@group), notice: "メッセージが送信されました"
+      respond_to do |format|
+        format.html { redirect_to group_messages_path(@group), notice: "メッセージが送信されました" }
+        format.json
+        # render: jsonはjbuilderを通さない時に必要だが、今回は通しているので必要なし。
+        # redirect_to group_messages_path(@group), notice: "メッセージが送信されました"
+      end
     else
-      @messages = @group.messages.includes(:user)
+      @messages = @group.messages.includes(:user)   #これを入力しておかないと、グループ内のメッセージが全て消える。(更新したりグループを選べば元に戻る)
       flash.now[:alert] = "メッセージを入力してください。"
       render :index
     end
   end
+#ifとelseの中に両方ともformat.htmlとformat.jsonを定義しなくてはいけない
+
+
 
   private
 
@@ -27,3 +35,5 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
   end
 end
+
+# この時のformat.htmlは送信以外の静的なものを指し、format.jsonは送信という動作そのものの動作を指す。
