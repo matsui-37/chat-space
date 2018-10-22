@@ -14,7 +14,6 @@
   }
   &__edit {
     border: thin solid $water;
-    color: $water;
     height: 40px;
     width: 40px;
     float:right;
@@ -22,6 +21,10 @@
     margin: 28px 0;
     text-align: center;
     line-height: 40px;
+      &--name {
+        color: $water;
+        text-decoration: none;
+      }
   }
   &__member {
     color: $gray;
@@ -29,4 +32,8 @@
   }
 }
 
+a {
+  text-decoration: none;
+}
 
+// link_toは検証から調べて分かるようにデフォルトでa要素を含み、アンダーラインが引かれるようになっている。アンダーラインを消したい場合はaを指定してtext-decoration: none:で消す必要がある。

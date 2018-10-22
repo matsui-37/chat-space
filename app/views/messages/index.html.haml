@@ -7,17 +7,21 @@
     .right-content
       .right-top
         .right-top__name
-          d
+          = @group_name
         .right-top__edit
-          Edit
+          = link_to edit_group_path(@group) do
+            .right-top__edit--name
+              Edit
         .right-top__member
-          Member : current_user.name
+          Member :
+          - @group_member.each do |user|
+            = user.name
       .right-center
         = render partial: 'messages', collection: @messages
       .right-bottom
         = form_for [@group, @message] do |f|
-          = f.text_field :content, class: "right-bottom__text hidden", placeholder: "type a message", id: "new_message"
+          = f.text_field :content, class: "      right-bottom__text hidden", placeholder: "type a message", id: "new_message"
           = f.label :image, class: "right-bottom__text--icon" do
             = fa_icon 'image', class: "icon"
-            = f.file_field :image, class: "hidden" 
+            = f.file_field :image, class: "hidden"
           = f.submit "Send", class: "right-bottom__send", id: "disable"
