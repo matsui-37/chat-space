@@ -4,10 +4,6 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
-    @group_name = @group.name
-    # group_idを取得した変数@groupに代入し、set_groupをアクション前に定義し、変数@groupをindexや他のアクションでも利用できるようにし、今回はgroup_idを利用してgroupのテーブルからnameを取得し、変数@group_nameに代入している。
-    @group_member = @group.users
-    # group_idを用いてgroup_usersを通してusersの配列を取得している。
   end
 
   def create

@@ -7,14 +7,14 @@
     .right-content
       .right-top
         .right-top__name
-          = @group_name
+          = @group.name
         .right-top__edit
           = link_to edit_group_path(@group) do
             .right-top__edit--name
               Edit
         .right-top__member
           Member :
-          - @group_member.each do |user|
+          - @group.users.each do |user|
             = user.name
       .right-center
         = render partial: 'messages', collection: @messages
@@ -25,3 +25,7 @@
             = fa_icon 'image', class: "icon"
             = f.file_field :image, class: "hidden"
           = f.submit "Send", class: "right-bottom__send", id: "disable"
+
+/ 10行目、massages_controller.rbにて、group_idを取得した変数@groupに代入し、set_groupをアクション前に定義し、変数@groupをindexや他のアクションでも利用できるようにし、今回はgroup_idを利用してgroupのテーブルからnameを取得している。
+
+/ 17行目、group_idを用いて中間テーブルのgroup_usersを通してusersの配列を取得している。
