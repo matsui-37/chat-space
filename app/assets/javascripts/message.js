@@ -67,7 +67,7 @@ $(function(){
 
  // 自動更新
   $(function(){
-    var interval = setInterval(update, 5000);
+    setInterval(update, 5000);
   });
   //5000ミリ秒ごとにupdateという関数を実行する
   function update(){
@@ -80,7 +80,6 @@ $(function(){
         dataType: 'json'
       })
       .done(function(json){
-        console.log(json)
         if(json != null){     // jsonの中身が空だった場合、
           json.forEach(function(message){
             $('.right-center').append(buildMESSAGE(message));
@@ -93,7 +92,7 @@ $(function(){
       });
     }
     else{
-      clearInterval(interval)
+      clearInterval(update, 5000)
     }
   };
 });
