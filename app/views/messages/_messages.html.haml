@@ -1,4 +1,5 @@
-.right-center__group
+.right-center__group{ "data-message-id": messages.id}
+  / 検証を見れば分かるが、right-center__gruopというクラスにdata-message-idを作り、これにmessages.id(メッセージが投稿された番号)を代入している。
   .right-center__group--name
     = messages.user.name
   .right-center__group--date
@@ -7,5 +8,4 @@
     - if messages.content.present?
       = messages.content
     = image_tag messages.image.url, class: "right-center__group--images" if messages.image.present?
-
 

@@ -29,3 +29,5 @@
 / 10行目、massages_controller.rbにて、group_idを取得した変数@groupに代入し、set_groupをアクション前に定義し、変数@groupをindexや他のアクションでも利用できるようにし、今回はgroup_idを利用してgroupのテーブルからnameを取得している。
 
 / 17行目、group_idを用いて中間テーブルのgroup_usersを通してusersの配列を取得している。
+
+/ 20行目、特定のビューを複数回使い回す場合、eachメソッドを用いるよりも、部分テンプレートをrenderした方が動作が高速になる。Chat-spaceでは大量のメッセージをやり取りすることが予想されるため、部分テンプレートを用いて実装を行う。
