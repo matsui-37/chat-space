@@ -25,3 +25,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email)
   end
 end
+
+# name LIKE(?) "%#{params[:keyword]}%"ビューから取得したキーを参考に登録している名前一覧を取得している。
+# And id !=?でcurrent_userを指定して検索一覧から出ないようにしている。

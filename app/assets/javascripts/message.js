@@ -80,7 +80,7 @@ $(function(){
         dataType: 'json'
       })
       .done(function(json){
-        if(json != null){     // jsonの中身が空だった場合、
+        if(json != null){     // jsonの中身が空でない場合、
           json.forEach(function(message){
             $('.right-center').append(buildMESSAGE(message));
           });
