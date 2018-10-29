@@ -69,7 +69,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'html2haml'
-gem 'fog-aws'
+gem 'fog-aws', '3.0.0'
 
 group :production do
   gem 'unicorn'
