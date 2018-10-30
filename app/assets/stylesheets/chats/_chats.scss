@@ -22,15 +22,16 @@ body {
   width: 300px;
   color: $white;
   display: inline-block;
-
+  position: fixed;
 }
 
 .right-content {
   height: 100%;
   width: calc(100% - 300px);
   float: right;
-  position: relative;
+  position: fixed;
   @include clearfix() ;
+  margin-left: 300px;
 }
 
 

@@ -1,10 +1,10 @@
 .right-top {
   background: white;
+
   height: 96px;
-  width: calc(100% - 380px);
+  width: calc(100% - 80px);
   padding: 0 40px;
   display: block;
-  position: fixed;
 
   &__name {
     font-size: 20px;

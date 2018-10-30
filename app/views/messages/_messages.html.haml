@@ -3,9 +3,10 @@
   .right-center__group--name
     = messages.user.name
   .right-center__group--date
-    = messages.created_at.to_formatted_s(:datetime)
+    = simple_time(messages.created_at)
   .right-center__group--message
     - if messages.content.present?
       = messages.content
     = image_tag messages.image.url, class: "right-center__group--images" if messages.image.present?
 
+/ simple_time()はapplication_helper.rbで定義したメソッドを使用している。
